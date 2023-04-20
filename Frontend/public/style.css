@@ -1,0 +1,307 @@
+body {
+  position: relative;
+}
+
+.scrollspy {
+  padding: 50px 20px;
+  border-radius: 15px 50px 30px;
+  border: 6px solid rgb(165, 134, 105);
+  text-align: center;
+  border-style: outset;
+}
+
+/*CAROUSEL MAGASSÁGÁNAK BEÁLLÍTÁSA*/
+.carousel-inner {
+  max-height: 700px;
+}
+
+/*FOOTER BEÁLLÍTÁSOK:*/
+.footermargin {
+  margin-bottom: 20px;
+}
+
+/*KÖZÉPREIGAZÍTÁSHOZ HASZNÁT KÓDOK ELEJE*/
+.center {
+  text-align: center;
+  margin: auto;
+  background-color: rgb(145, 115, 89);
+  border-radius: 30px;
+  border-style: groove;
+  padding: 40px;
+}
+
+.contact-center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 0;
+}
+/*KÖZÉPREIGAZÍTÁSHOZ HASZNÁT KÓDOK VÉGE*/
+
+/*DIV HÁTTÉRSZÍN BEÁLLÍTÁSOK ELEJE*/
+.light-brown-background-color {
+  background-color: rgb(121, 93, 68);
+}
+
+.dark-brown-background-color {
+  background-color: rgb(58, 36, 25);
+  background-repeat: no-repeat;
+  width: 100% 100%;
+}
+/*DIV HÁTTÉRSZÍN BEÁLLÍTÁSOK VÉGE*/
+
+/*BOOTSTRAP 5 CARD BEÁLLÍTÁSAINAK ELEJE */
+.none-text-decoration {
+  text-decoration: none;
+}
+
+.left {
+  float: left;
+  text-align: left;
+  color: white;
+}
+
+.colorblack {
+  color: black;
+}
+
+.cardfont {
+  color: black;
+  font-size: small;
+}
+
+.cardbodycolor {
+  background-color: rgba(239, 208, 169, 0.897);
+  font-family: Georgia;
+}
+
+.cardtitle {
+  font-size: 100%;
+  color: black;
+}
+
+.bold-white-color {
+  color: white;
+  font-weight: bold;
+}
+
+.left-padding {
+  padding-left: 5px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+#description {
+  color: white;
+  text-align: center;
+  float: left;
+}
+/*BOOTSTRAP 5 CARD BEÁLLÍTÁSAINAK VÉGE */
+
+/*BUTTON BEÁLLÍTÁSAINAK ELEJE */
+.btn-margin {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.btn-margin-loyalty {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-width {
+  max-width: 300px;
+}
+/*BUTTON BEÁLLÍTÁSAINAK VÉGE */
+
+/*FÉNYKÉP BEÁLLÍTÁSOK ELEJE*/
+.img-border {
+  border: 5px solid #555;
+}
+
+.img-fluid {
+  float: left;
+}
+/*FÉNYKÉP BEÁLLÍTÁSOK VÉGE*/
+
+/*LINK BEÁLLÍTÁSOK ELEJE*/
+.link-bold-white {
+  color: white;
+  font-weight: bold;
+}
+
+.link-bold-white:hover {
+  color: gray;
+}
+/*LINK BEÁLLÍTÁSOK VÉGE*/
+
+/*RÓLUNK RÉSZNÉL HASZNÁLT CARD BEÁLLÍTÁSOK ELEJE*/
+.testimonial-card .card-up {
+  height: 120px;
+  overflow: hidden;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.aqua-gradient {
+  background-image: url(img/coveraboutus.webp);
+  background-repeat: no-repeat;
+  width: 100% 100%;
+}
+
+.testimonial-card .avatar {
+  width: 140px;
+  margin-top: -60px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+/*RÓLUNK RÉSZNÉL HASZNÁLT CARD BEÁLLÍTÁSOK VÉGE*/
+
+/*HÁTTÉRKÉPEK BEÁLLÍTÁSAINAK ELEJE*/
+.img-up {
+  background-image: url(img/up.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.img-down {
+  background-image: url(img/updown.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.header-footer-background-image {
+  background-image: url(img/headerfooter.webp);
+}
+
+.main-background-image {
+  background-image: url(img/mainbackgroundimage.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/*HÁTTÉRKÉPEK BEÁLLÍTÁSAINAK VÉGE*/
+
+/*WEBOLDAL GÖRGŐ BEÁLLÍTÁSAINAK ELEJE*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(61, 37, 27);
+  height: 200px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(119, 85, 70);
+}
+/*WEBOLDAL GÖRGŐ BEÁLLÍTÁSAINAK VÉGE*/
+
+/*JOBB ALSÓ SAROKBAN TALÁLHATÓ FELUGRÓ GOMB BEÁLLÍTÁSAINAK ELEJE*/
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+  background-color: #775546;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #af7760;
+}
+/*JOBB ALSÓ SAROKBAN TALÁLHATÓ FELUGRÓ GOMB BEÁLLÍTÁSAINAK VÉGE*/
+
+/* BEJELENTKEZÉS ÉS REGISZTRÁLCIÓ BEÁLLÍTÁSAINAK ELEJE*/
+.login-registration-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #724a38f1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab {
+  border: none;
+  background-color: transparent;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  border-bottom: 2px solid #000;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+}
+/* BEJELENTKEZÉS ÉS REGISZTRÁLCIÓ BEÁLLÍTÁSAINAK VÉGE*/
