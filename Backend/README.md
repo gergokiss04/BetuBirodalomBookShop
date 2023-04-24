@@ -12,8 +12,6 @@ Amit be kell írni a Package Manager Console-ba:
 Scaffold-DbContext "server=localhost;database=bookshop;user=root;password=;ssl mode=none;" mysql.entityframeworkcore -outputdir Models -f
 
 
-Az adatbázis tartalmazza a project bookshop (1).sql néven!
-
 [JsonIgnore] parancsot kell jól elhelyezni ami garantálja a sikeres működést ha több táblával dolgozunk ami össze van kötve.
 
 Hasznos anyag hozzá:
