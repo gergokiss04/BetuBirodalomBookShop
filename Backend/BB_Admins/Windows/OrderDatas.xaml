@@ -1,0 +1,32 @@
+﻿<Window x:Class="BB_Admins.Windows.OrderDatas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BB_Admins.Windows"
+        mc:Ignorable="d"
+        Title="Rendelések" Height="600" Width="1095" Background="Transparent" Icon="/Windows/logo2 (1).png">
+    <Grid>
+        <!--Megrendelések táblázata-->
+        <DataGrid VerticalAlignment="Top" Background="Transparent" x:Name="DataG" AutoGenerateColumns="False" SelectionChanged="OrderSelection" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="30" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="115" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="BookId" Binding="{Binding BookId}" Width="30" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Db" Binding="{Binding StockNumber}" Width="30" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Dátum" Binding="{Binding OrderDate}" Width="135" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Telefonszám" Binding="{Binding Phonenumber}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Város" Binding="{Binding Location}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Út" Binding="{Binding Street}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Házszam" Binding="{Binding Number}" Width="30" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Szállítás" Binding="{Binding OrderType}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Megjegyzés" Binding="{Binding PersonalRequest}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Végösszeg" Binding="{Binding TotalAmount}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Mentés, nyomtatás gombok-->
+        <Button x:Name="b1" Background="Transparent" Foreground="Yellow" Padding="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="540" Click="Button_Click">Mentés</Button>
+        <Button x:Name="b2" Background="Transparent" Foreground="Yellow" Padding="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="540" Click="Button_Click_1" Grid.ColumnSpan="3">Nyomtatás</Button>
+    </Grid>
+</Window>

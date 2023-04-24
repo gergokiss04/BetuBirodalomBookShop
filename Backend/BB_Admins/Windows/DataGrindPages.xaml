@@ -1,0 +1,55 @@
+﻿<Window x:Class="BB_Admins.Windows.DataGrindPages"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BB_Admins.Windows"
+        mc:Ignorable="d"
+        Title="Könyvek" Height="600" Width="1000" Background="Transparent" Icon="/Windows/logo2 (1).png">
+    <Grid Margin="0,10,10,0">
+        <!--Könyvek táblázat-->
+        <DataGrid HorizontalAlignment="Right" Background="Transparent" x:Name="DataG" AutoGenerateColumns="False" SelectionChanged="BooksChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding BookId}" Width="40" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Cím" Binding="{Binding Title}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Szerző" Binding="{Binding Author}" Width="100" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="MűfajId" Binding="{Binding GenreId}" Width="80" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Ár" Binding="{Binding Price}" Width="80" IsReadOnly="True" FontWeight="Bold"/>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding Isbn}" Width="70" IsReadOnly="True" FontWeight="Bold"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Könyv adatainak felvitelére, módosítására szolgáló textboxok-->
+        <Grid HorizontalAlignment="Left" Width="370">
+            <Label Margin="10,0,300,400"  Foreground="Yellow">Id</Label>
+            <TextBox Margin="100,5,10,520" Name="id"></TextBox>
+            <Label Margin="10,30,300,370"  Foreground="Yellow">ISBN</Label>
+            <TextBox Margin="100,35,10,490" Name="isbn" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 60 300 340" Background="Transparent" Foreground="Yellow">Cím</Label>
+            <TextBox Margin="100,65,10,460" Name="title"></TextBox>
+            <Label Margin="10 90 300 310" Background="Transparent" Foreground="Yellow">Szerző</Label>
+            <TextBox Margin="100,95,10,430" Name="author" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 120 300 280" Background="Transparent" Foreground="Yellow">Kiadó</Label>
+            <TextBox Margin="100 125 10 400" Name="publisher"></TextBox>
+            <Label Margin="10 150 300 250" Background="Transparent" Foreground="Yellow">Oldal szám</Label>
+            <TextBox Margin="100 155 10 370" Name="pnumber" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 180 300 220" Background="Transparent" Foreground="Yellow">Nyelv</Label>
+            <TextBox Margin="100 185 10 340" Name="language"></TextBox>
+            <Label Margin="10 210 300 190" Background="Transparent" Foreground="Yellow">Megjelenési év</Label>
+            <TextBox Margin="100 215 10 310" Name="pyear" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 240 300 160" Background="Transparent" Foreground="Yellow">Ár</Label>
+            <TextBox Margin="100 245 10 280" Name="priece"></TextBox>
+            <Label Margin="10 270 280 130" Background="Transparent" Foreground="Yellow">Raktári szám</Label>
+            <TextBox Margin="100 275 10 250" Name="snumber" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 300 300 100" Background="Transparent" Foreground="Yellow">Borító</Label>
+            <TextBox Margin="100 305 10 220" Name="cover"></TextBox>
+            <Label Margin="10 330 300 70" Background="Transparent" Foreground="Yellow">MűfajId</Label>
+            <TextBox Margin="100 335 10 190" Name="genreid" Background="Transparent" Foreground="Yellow"></TextBox>
+            <Label Margin="10 360 300 40" Background="Transparent" Foreground="Yellow">Leírás</Label>
+            <TextBox Margin="100 365 10 90" Name="description" TextAlignment="Justify"></TextBox>
+            <!--Felvitel, módosítás, törlés gombok-->
+            <Button Margin="70,500,240,5" Background="Transparent" Foreground="Yellow" Click="createBtn">Hozzáadás</Button>
+            <Button Margin="150,500,150,5" Background="Transparent" Foreground="Yellow" Click="updateBtn">Módosítás</Button>
+            <Button Margin="240,500,60,5" Background="Transparent" Foreground="Yellow" Click="deleteBtn">Törlés</Button>
+        </Grid>
+    </Grid>
+</Window>

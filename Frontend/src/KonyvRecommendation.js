@@ -36,11 +36,13 @@ export function KonyvRecommendation(props) {
     if (!randomId) {
       setRandomId(Math.floor(Math.random() * 80) + 1);
     } else {
-      fetch(`https://localhost:7280/Book/${randomId}`)
+      fetch(`https://localhost:7280/Book/GetBookBy/${randomId}`)
         .then((response) => response.json())
         .then((data) => setkonyvrecommendation(data));
     }
   }, [randomId]);
+
+  console.log(konyvrecommendation);
 
   return (
     <div className="p-5 m-auto text-center content bg-lavender img-up">
@@ -49,53 +51,49 @@ export function KonyvRecommendation(props) {
         className="container-fluid text-white scrollspy light-brown-background-color"
       >
         <div className="p-5 m-auto text-center content bg-lavender">
-          {isPending || konyvrecommendation.randomId ? (
+          {isPending || !konyvrecommendation.length ? (
             <div className="spinner-border"></div>
           ) : (
             <div className="container">
               <div className="row">
                 <h1>Könyvajánló</h1>
                 <hr></hr>
-                <div className="col-xs-1 col-sm-12 col-md-6 col-lg-6 col-xl-6 img-center">
-                  <NavLink
-                    key={konyvrecommendation.bookId}
-                    to={"/Book/" + konyvrecommendation.bookId}
-                  >
-                    <img
-                      className="img-fluid image-container"
-                      alt={konyvrecommendation.title}
-                      decoding="async"
-                      width={300}
-                      height={500}
-                      style={{ maxHeight: 500 }}
-                      src={
-                        konyvrecommendation.cover
-                          ? konyvrecommendation.cover
-                          : "https://via.placeholder.com/400x800"
-                      }
-                    />
-                  </NavLink>
-                </div>
-                <div className="col-xs-1 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                  <h2>
-                    {konyvrecommendation.author +
-                      ": " +
-                      konyvrecommendation.title}
-                  </h2>
-                  <p className="justify">{konyvrecommendation.description}</p>
-                  <h5>
-                    <b>Ára:</b> {konyvrecommendation.price} Ft
-                  </h5>
-
-                  <button
-                    id="regisztralcio"
-                    type="button"
-                    className="btn btn-success btn-rounded btn-width"
-                    onClick={() => handleAddToCart(konyvrecommendation)}
-                  >
-                    Kosárba
-                  </button>
-                </div>
+                {konyvrecommendation.map((konyv, index) => (
+                  <React.Fragment key={index}>
+                    <div className="col-xs-1 col-sm-12 col-md-6 col-lg-6 col-xl-6 img-center">
+                      <NavLink to={"/Book/" + konyv.bookId}>
+                        <img
+                          className="img-fluid image-container"
+                          alt={konyv.title}
+                          decoding="async"
+                          width={300}
+                          height={500}
+                          style={{ maxHeight: 500 }}
+                          src={
+                            konyv.cover
+                              ? konyv.cover
+                              : "https://via.placeholder.com/400x800"
+                          }
+                        />
+                      </NavLink>
+                    </div>
+                    <div className="col-xs-1 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                      <h2>{konyv.author + ": " + konyv.title}</h2>
+                      <p className="justify">{konyv.description}</p>
+                      <h5>
+                        <b>Ára:</b> {konyv.price} Ft
+                      </h5>
+                      <button
+                        id="regisztralcio"
+                        type="button"
+                        className="btn btn-success btn-rounded btn-width"
+                        onClick={() => handleAddToCart(konyv)}
+                      >
+                        Kosárba
+                      </button>
+                    </div>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           )}
