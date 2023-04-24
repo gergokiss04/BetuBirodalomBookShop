@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -19,6 +18,8 @@ using System.Windows.Markup;
 using System.Drawing.Printing;
 using System.Windows.Xps;
 using BB_Admins.Models;
+using Microsoft.Win32;
+using System.IO;
 
 namespace BB_Admins.Windows
 {
@@ -94,21 +95,19 @@ namespace BB_Admins.Windows
         //Megrendelés kiírása txt fájlba
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter sw = new StreamWriter("BB_Megrendelolap.txt", false, Encoding.UTF8);
             try
             {
-                sw.WriteLine($"                               MEGRENDELÉS\n\nTeljes név: {order.Username}\nEmail: {order.Email}\nTelefonszám: {order.Phonenumber}\nCím: {order.Zipcode} {order.Location} {order.Street} {order.Number}\n_____________________________________\nDátum: {order.OrderDate}\n_____________________________________\nKönyv:\n\n   KönyvId: {order.BookId}\n   Könyvcím: {konyvCím}\n   Darab szám:{order.StockNumber} db\n   Teljesár: {order.TotalAmount} Ft\n_____________________________________\nSzállítás:\n       {order.OrderType}\n_____________________________________\nMegjegyzés:\n        {order.PersonalRequest}");
+                string save = $"\t\t\t\t\t\t\t\t\t\tMEGRENDELÉS\n\nTeljes név: {order.Username}\nEmail: {order.Email}\nTelefonszám: {order.Phonenumber}\nCím: {order.Zipcode} {order.Location} {order.Street} {order.Number}\n_____________________________________\nDátum: {order.OrderDate}\n_____________________________________\nKönyv:\n\n   KönyvId: {order.BookId}\n   Könyvcím: {konyvCím}\n   Darab szám:{order.StockNumber} db\n   Teljesár: {order.TotalAmount} Ft\n_____________________________________\nSzállítás:\n       {order.OrderType}\n_____________________________________\nMegjegyzés:\n        {order.PersonalRequest}";
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text file (*.txt)|*.txt";
+                if (saveFileDialog.ShowDialog() == true)
+                    File.WriteAllText(saveFileDialog.FileName, save);
                 MessageBox.Show("Sikeres mentés");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                sw.Close();
-            }
-
         }
         //Megrendelés nyomtatása
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -122,7 +121,7 @@ namespace BB_Admins.Windows
                         konyvCím = item.Title;
                     }
                 }
-                var selectedItem = $"                               MEGRENDELÉS\n\nTeljes név: {order.Username}\nEmail: {order.Email}\nTelefonszám: {order.Phonenumber}\nCím: {order.Zipcode} {order.Location} {order.Street} {order.Number}\n_____________________________________\nDátum: {order.OrderDate}\n_____________________________________\nKönyv:\n\n   KönyvId: {order.BookId}\n   Könyvcím: {konyvCím}\n   Darab szám:{order.StockNumber} db\n   Teljesár: {order.TotalAmount} Ft\n_____________________________________\nSzállítás:\n       {order.OrderType}\n_____________________________________\nMegjegyzés:\n        {order.PersonalRequest}";
+                var selectedItem = $"\t\t\t\t\t\t\t\t\t\tMEGRENDELÉS\n\nTeljes név: {order.Username}\nEmail: {order.Email}\nTelefonszám: {order.Phonenumber}\nCím: {order.Zipcode} {order.Location} {order.Street} {order.Number}\n_____________________________________\nDátum: {order.OrderDate}\n_____________________________________\nKönyv:\n\n   KönyvId: {order.BookId}\n   Könyvcím: {konyvCím}\n   Darab szám:{order.StockNumber} db\n   Teljesár: {order.TotalAmount} Ft\n_____________________________________\nSzállítás:\n       {order.OrderType}\n_____________________________________\nMegjegyzés:\n        {order.PersonalRequest}";
 
                 FlowDocument doc = new FlowDocument(new Paragraph(new Run(selectedItem.ToString())));
 
