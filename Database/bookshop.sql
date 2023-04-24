@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Ápr 12. 09:54
+-- Létrehozás ideje: 2023. Ápr 24. 08:32
 -- Kiszolgáló verziója: 10.4.27-MariaDB
 -- PHP verzió: 8.2.0
 
@@ -135,7 +135,7 @@ INSERT INTO `books` (`Book_id`, `ISBN`, `Title`, `Author`, `Publisher`, `PageNum
 (84, 9789635663101, 'Ne érints', 'Tahereh Mafi', 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', 290, 'Magyar', 2015, 3790, 7, '../img/Ne_erints.webp', 9, 'Senki sem tudja, miért végzetes Juliette érintése, de a Regeneráció kormányának tervei vannak vele. És terveik között szerepel, hogy fegyverként használják a lányt.\r\nDe Juliette-nek is megvannak a maga tervei.\r\nSoha életében nem volt szabad, ám végre felfedezi magában az erőt, hogy visszavágjon. És megtalálja a jövőt az egyetlen fiúval, akiről azt hitte, örökre elvesztette.\r\n\r\n\r\nTarareh Mafi delejes erejű első regényében egy emberfeletti erővel rendelkező lány egy hatalmi játszma közepén találja magát egy szánalmas világban, mely tele van vérpezsdítő szerelemmel, kábító gonoszsággal és a jövőt meghatározó választásokkal.'),
 (85, 9786156490056, 'Nem ígértem rózsakertet', 'Joanne Greenberg', 'TRUBADÚR KÖNYVEK KIADÓ KFT', 380, 'Magyar', 2023, 2399, 1, '../img/Nem_igertem_rozsakertet_-_Trubadur_Zsebkonyvek_30..webp', 9, 'Persze az intézetről egészen más leírást kell adni, egy szót se a magas hangú, velőtrázó sikolyról, amit elmenőben, az egyik rácsos ablak mögül hallottak, s amitől remegni kezdtek, és a fogukat csikorgatták.'),
 (86, 9789633559307, 'Nyári nővérek', 'Monika Peetz', 'PARK KÖNYVKIADÓ', 284, 'Magyar', 2023, 3999, 6, '../img/Nyari_noverek.webp', 9, 'A Keddi nők szerzőjének új regénye\r\nSzerelem és rivalizálás, bűntudat és vezeklés - nyers közvetlenséggel, lakonikus humorral és megkapó könnyedséggel.\r\nA sikeres jelmeztervező, Doro; az érzékeny családanya, Yella; a légiesen modern, de gyökértelen Amelie; a racionális kémikus, Helen - négy testvér, akik cseppet sem hasonlítanak egymásra. És akik az anyjuk hívására, minden ellenérzésük dacára egyként útra kelnek a holland faluba, Bergenbe. A csodás partra, ahol gyermekkoruk nyarait töltötték - és ahova sohasem akartak visszatérni. Itt veszítették el az apjukat.\r\nMi viszi rá mégis az anyjukat, hogy ide szervezzen családi találkozót? Mi az a hír, amit képtelen máshol megosztani? És miért a nagy titkolózás?'),
-(87, 9789635980789, 'Világépítők', 'Gabrielle Zevin', 'MAGNÓLIA', 511, 'Magyar', 2022, 5681, 2, '../img/Vilagepitok.webp', 9, 'Két gyerek, egy kisfiú és egy kislány találkozik egy kórházban 1987-ben. A lány a leukémiában szenvedő nővérét látogatja meg, a fiú egy autóbalesetből épül fel. Közös témájuk, a videójátékok iránti rajongás - a bennük található lebilincselő világok, az izgalmas versenyek és a mindennapi élet bajai elől nyíló menekülési lehetőség - különös barátságot eredményez köztük. Mégis nyolc év telik el, mire ismét találkoznak, ám sorsuk innentől végleg összefonódik.\r\nSam és Sadie az egyetemi éveik alatt futnak össze újra egy zsúfolt metróállomáson. A lány a fiú kezébe nyom egy floppy lemezt, amin a legújabb játéka található, amit az MIT haladó játékfejlesztés szemináriumára készített. ');
+(87, 9789635980789, 'Világépítők', 'Gabrielle Zevin', 'MAGNÓLIA', 511, 'Magyar', 2022, 5681, 3, '../img/Vilagepitok.webp', 9, 'Két gyerek, egy kisfiú és egy kislány találkozik egy kórházban 1987-ben. A lány a leukémiában szenvedő nővérét látogatja meg, a fiú egy autóbalesetből épül fel. Közös témájuk, a videójátékok iránti rajongás - a bennük található lebilincselő világok, az izgalmas versenyek és a mindennapi élet bajai elől nyíló menekülési lehetőség - különös barátságot eredményez köztük. Mégis nyolc év telik el, mire ismét találkoznak, ám sorsuk innentől végleg összefonódik.\r\nSam és Sadie az egyetemi éveik alatt futnak össze újra egy zsúfolt metróállomáson. A lány a fiú kezébe nyom egy floppy lemezt, amin a legújabb játéka található, amit az MIT haladó játékfejlesztés szemináriumára készített. ');
 
 -- --------------------------------------------------------
 
@@ -208,12 +208,6 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`Id`, `Username`, `Email`, `Book_id`, `StockNumber`, `OrderDate`, `Phonenumber`, `Zipcode`, `Location`, `Street`, `Number`, `OrderType`, `PersonalRequest`, `Total_amount`) VALUES
-(8, 'string', 'string', 4, 0, '2023-04-06 14:24:23.466000', 'string', 0, 'string', 'string', 'stri', 'string', 'string', NULL),
-(9, 'Kiss Gergő', 'kissg2@kkszki.hu', 4, 1, '2023-04-06 16:05:09.883000', '06301224234', 3571, 'Alsózsolca', 'Soltész Nagy Kálmán út', '234', 'futarszolgalat', 'proba rendelés', NULL),
-(11, 'Kiss Gergő', 'kissg2@kkszki.hu', 37, 1, '2023-04-07 10:21:55.990000', '06301224234', 3571, 'Alsózsolca', 'Soltész Nagy Kálmán út', '234', 'futarszolgalat', 'proba', NULL),
-(12, 'kissg2', 'kissg2@kkszki.hu', 37, 1, '2023-04-07 10:25:11.284000', '06301224234', 3571, 'Alsózsolca', 'Soltész Nagy Kálmán út', '33', 'postan_marado_csomag', 'proba tobb könyv', NULL),
-(14, 'proba', 'kissg2@kkszki.hu', 37, 1, '2023-04-07 10:55:23.014000', '06301224234', 3571, 'Alsózsolca', 'Soltész Nagy Kálmán út', '54', 'csomagautomata', 'a', NULL),
-(15, 'proba', 'kissg2@kkszki.hu', 37, 1, '2023-04-07 10:57:49.826000', '06301224234', 3571, 'Alsózsolca', 'Soltész Nagy Kálmán út', '54', 'csomagautomata', 'a', NULL),
 (16, 'Kiss Gergő', 'kissg2@kkszki.hu', 64, 1, '2023-04-12 05:54:16.580000', '0640123432', 3530, 'Miskolc', 'Soltész Nagy Kálmán útca', '10', 'futarszolgalat', 'Nincs', 8289),
 (17, 'Kiss Gergő', 'kissg2@kkszki.hu', 35, 1, '2023-04-12 05:54:16.581000', '0640123432', 3530, 'Miskolc', 'Soltész Nagy Kálmán útca', '10', 'futarszolgalat', 'Nincs', 8289);
 
@@ -311,7 +305,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `books`
 --
 ALTER TABLE `books`
-  MODIFY `Book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `Book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT a táblához `genres`
